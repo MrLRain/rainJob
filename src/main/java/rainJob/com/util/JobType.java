@@ -11,4 +11,6 @@ public enum JobType {
         this.id = id;
     }
 
+    
+
 }

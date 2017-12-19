@@ -1,5 +1,6 @@
 package rainJob.com.entity;
 
+import javax.persistence.MappedSuperclass;
 import java.util.Date;
 @MappedSuperclass
 public class BaseEntity {
