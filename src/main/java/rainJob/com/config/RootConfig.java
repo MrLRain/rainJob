@@ -1,4 +1,3 @@
-/*
 package rainJob.com.config;
 
 import org.springframework.context.annotation.ComponentScan;
@@ -10,4 +9,4 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @ComponentScan(basePackages = {"rainJob.com.config"}, excludeFilters = {@Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)})
 public class RootConfig {
-}*/
+}

@@ -1,3 +1,4 @@
+/*
 package rainJob.com.config;
 
 import org.springframework.web.WebApplicationInitializer;
@@ -21,4 +22,4 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
     }
-}
+}*/

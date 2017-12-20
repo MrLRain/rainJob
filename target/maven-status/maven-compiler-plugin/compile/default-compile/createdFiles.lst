@@ -1,0 +1,11 @@
+rainJob\com\controller\HiController.class
+rainJob\com\entity\Menu.class
+rainJob\com\entity\User.class
+rainJob\com\util\JobType.class
+rainJob\com\entity\Applicant.class
+rainJob\com\entity\Job.class
+rainJob\com\entity\JobComment.class
+rainJob\com\entity\Complaint.class
+rainJob\com\entity\Placard.class
+rainJob\com\entity\BaseEntity.class
+rainJob\com\util\SpringBeanFactory.class

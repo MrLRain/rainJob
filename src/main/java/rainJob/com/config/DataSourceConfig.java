@@ -1,3 +1,4 @@
+/*
 package rainJob.com.config;
 
 import org.slf4j.Logger;
@@ -15,9 +16,11 @@ import javax.sql.DataSource;
 @PropertySource({"classpath:application.xml"})
 public class DataSourceConfig {
     private static final Logger logger = LoggerFactory.getLogger(DataSourceConfig.class);
-    /*
+    */
+/*
      * 绑定资源属性
-     */
+     *//*
+
     @Value("${jdbc.driver}")
     String driverClass;
     @Value("${jdbc.url}")
@@ -37,4 +40,4 @@ public class DataSourceConfig {
         dataSource.setPassword(passWord);
         return dataSource;
     }
-}
+}*/

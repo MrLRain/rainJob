@@ -1,3 +1,4 @@
+/*
 package rainJob.com.config;
 
 import org.springframework.context.annotation.*;
@@ -8,4 +9,4 @@ import org.springframework.stereotype.Controller;
 @EnableAspectJAutoProxy(proxyTargetClass=true)
 @Import({DaoConfig.class})
 public class AppConfig {
-}
+}*/

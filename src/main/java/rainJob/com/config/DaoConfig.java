@@ -1,3 +1,4 @@
+/*
 package rainJob.com.config;
 
 import org.slf4j.Logger;
@@ -29,13 +30,15 @@ public class DaoConfig {
     @Value("${hibernate.show_sql}")
     String hibernate_show_sql;
 
-    /**
+    */
+/**
      * 描述 : <负责解析资源文件>. <br>
      *<p>
      <这个类必须有，而且必须声明为static，否则不能正常解析>
      </p>
      * @return
-     */
+     *//*
+
     @Bean
     public static PropertySourcesPlaceholderConfigurer placehodlerConfigurer() {
         logger.info("PropertySourcesPlaceholderConfigurer");
@@ -76,4 +79,4 @@ public class DaoConfig {
                 .getObject());
         return hibernateTransactionManager;
     }
-}
+}*/
