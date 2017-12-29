@@ -1,4 +1,4 @@
 package rainJob.com.entity;
 
-public class BaseEntity {
+public class City {
 }
