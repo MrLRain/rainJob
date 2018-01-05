@@ -1,4 +1,4 @@
-package rainJob.com.util;
+package rainJob.com.util.enumCodes;
 
 public enum SexType {
 
@@ -8,6 +8,5 @@ public enum SexType {
     SexType(Integer id) {
         this.id = id;
     }
-
 
 }

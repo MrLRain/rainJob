@@ -11,11 +11,6 @@ import javax.servlet.Filter;
 
 public class SpitterWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-    @Override
-    protected WebApplicationContext createRootApplicationContext() {
-        return null;
-    }
-
     @Nullable
     @Override
     protected Class<?>[] getRootConfigClasses() {
@@ -25,7 +20,6 @@ public class SpitterWebAppInitializer extends AbstractAnnotationConfigDispatcher
     @Nullable
     @Override
     protected Class<?>[] getServletConfigClasses() {
-
         return new Class<?>[]{WebConfig.class};
 
     }
@@ -33,7 +27,9 @@ public class SpitterWebAppInitializer extends AbstractAnnotationConfigDispatcher
 
     @Override
     protected Filter[] getServletFilters() {
-        return new Filter[]{new HiddenHttpMethodFilter(), new CharacterEncodingFilter()};
+        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+        characterEncodingFilter.setEncoding("UTF-8");
+        return new Filter[]{new HiddenHttpMethodFilter(), characterEncodingFilter};
     }
 
     @Override

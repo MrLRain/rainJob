@@ -1,4 +1,4 @@
-package rainJob.com.util;
+package rainJob.com.util.enumCodes;
 
 public enum GradeEnum {
     Admin(0),User(1),VIP(2),Company(3),Custom(4);
