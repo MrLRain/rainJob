@@ -1,13 +1,23 @@
 package rainJob.com.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
-
-public class BaseEntity {
-
+@MappedSuperclass
+public class BaseEntity implements Serializable {
+    private static final long serialVersionUID = -2737738263480523755L;
+    @Id
+    @Column(name="ID", length = 36, nullable = false)
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-
+    @Column(name = "create_date")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createDate;
-
+    @Column(name = "update_date")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date updateDate;
 
     public String getId() {

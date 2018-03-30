@@ -1,23 +1,29 @@
 package rainJob.com.config;
 
-import org.springframework.lang.Nullable;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.XmlWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import javax.servlet.Filter;
+/**
+ * @Author: xiaoyu
+ * @Date: 11:36 2018/3/30
+ * @Description:
+ * @ModifyBy:
+ */
+public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+    //配置DispatcherServlet映射到 /
+    @Override
+    protected String[] getServletMappings() {
+        return new String[]{"/"};
+    }
 
-public class SpitterWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-    @Nullable
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[]{RootConfig.class};
     }
 
-    @Nullable
     @Override
     protected Class<?>[] getServletConfigClasses() {
         return new Class<?>[]{WebConfig.class};
@@ -30,10 +36,5 @@ public class SpitterWebAppInitializer extends AbstractAnnotationConfigDispatcher
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding("UTF-8");
         return new Filter[]{new HiddenHttpMethodFilter(), characterEncodingFilter};
-    }
-
-    @Override
-    protected String[] getServletMappings() {
-        return new String[]{"/"};
     }
 }

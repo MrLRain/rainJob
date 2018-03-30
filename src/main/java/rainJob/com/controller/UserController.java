@@ -1,33 +1,53 @@
 package rainJob.com.controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import rainJob.com.controller.vo.UserVo;
-import rainJob.com.dto.ResponseMessage;
+import rainJob.com.dao.BaseRepository;
+import rainJob.com.entity.User;
+import rainJob.com.service.UserService;
+import rainJob.com.util.SpringBeanFactory;
+import rainJob.com.util.dozer.BeanMapper;
+import rainJob.com.util.supper.BaseService;
+/**
+ * @Author: xiaoyu
+ * @Date: 11:36 2018/3/30
+ * @Description:
+ * @ModifyBy:
+ */
+@RestController
+@RequestMapping("/user")
+public class UserController extends SpringBeanFactory<User, UserVo,BaseRepository> {
 
-public class UserController extends BaseController<UserVo> {
-
+    @Autowired
+    private UserService UserService;
+    @Autowired
+    private BeanMapper beanMapper;
     @Override
-    public ResponseMessage<UserVo> idList(String... ids) {
-        return null;
+    public BeanMapper getBeanMapper() {
+        return beanMapper;
     }
 
     @Override
-    public ResponseMessage<UserVo> pageList(UserVo vo) {
-        return null;
+    public BaseService<User,BaseRepository> getService() {
+        return UserService;
     }
 
     @Override
-    public ResponseMessage<UserVo> saveData(UserVo vo) {
-        return null;
+    public Class getVClass() {
+        return UserVo.class;
     }
 
     @Override
-    public ResponseMessage<UserVo> updateData(UserVo vo) {
-        return null;
+    public Class getTClass() {
+        return User.class;
     }
 
-    @Override
-    public ResponseMessage<UserVo> deleteData(UserVo vo) {
-        return null;
+    @GetMapping("/kill")
+    public void showKill(){
+        System.out.println("kill = " + "kill");
     }
 }

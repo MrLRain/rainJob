@@ -1,34 +1,38 @@
 package rainJob.com.controller.vo;
 
-import	java.util.Date;
-import	java.util.Date;
+/**
+ * @Author: xiaoyu
+ * @Date: 11:36 2018/3/30
+ * @Description:
+ * @ModifyBy:
+ */
+public class BaseEntityVo{
 
-public class BaseEntityVo	{
-	private	Date	updateDate;
-	private	String	id;
-	private	Date	createDate;
+    private int pageSize;
+    private int page;
+    private String order;
 
+    public int getPageSize() {
+        return pageSize;
+    }
 
-	 public	void	setUpdateDate(Date	updateDate){
-		this.updateDate=updateDate;
-	}
-	 public	Date	getUpdateDate(){
-		return	updateDate;
-	}
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
 
+    public int getPage() {
+        return page;
+    }
 
-	 public	void	setId(String	id){
-		this.id=id;
-	}
-	 public	String	getId(){
-		return	id;
-	}
+    public void setPage(int page) {
+        this.page = page;
+    }
 
+    public String getOrder() {
+        return order;
+    }
 
-	 public	void	setCreateDate(Date	createDate){
-		this.createDate=createDate;
-	}
-	 public	Date	getCreateDate(){
-		return	createDate;
-	}
+    public void setOrder(String order) {
+        this.order = order;
+    }
 }

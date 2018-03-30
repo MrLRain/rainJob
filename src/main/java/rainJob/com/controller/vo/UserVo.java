@@ -1,116 +1,39 @@
 package rainJob.com.controller.vo;
 
-import rainJob.com.util.enumCodes.SexType;
 
-public class UserVo {
-    private String headIcon;
-    private String password;
-    private String resumeId;
-    private String signature;
-    private String dimensionality;
-    private String roleId;
-    private SexType sex;
-    private String realityName;
-    private String useName;
-    private String eamil;
-    private String longitude;
+import java.util.Date;
+/**
+ * @Author: xiaoyu
+ * @Date: 11:36 2018/3/30
+ * @Description:
+ * @ModifyBy:
+ */
+public class UserVo extends BaseEntityVo {
+    private String id;
+    private Date createDate;
+    private Date updateDate;
 
-
-    public void setHeadIcon(String headIcon) {
-        this.headIcon = headIcon;
+    public String getId() {
+        return id;
     }
 
-    public String getHeadIcon() {
-        return headIcon;
+    public void setId(String id) {
+        this.id = id;
     }
 
-
-    public void setPassword(String password) {
-        this.password = password;
+    public Date getCreateDate() {
+        return createDate;
     }
 
-    public String getPassword() {
-        return password;
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
-
-    public void setResumeId(String resumeId) {
-        this.resumeId = resumeId;
+    public Date getUpdateDate() {
+        return updateDate;
     }
 
-    public String getResumeId() {
-        return resumeId;
-    }
-
-
-    public void setSignature(String signature) {
-        this.signature = signature;
-    }
-
-    public String getSignature() {
-        return signature;
-    }
-
-
-    public void setDimensionality(String dimensionality) {
-        this.dimensionality = dimensionality;
-    }
-
-    public String getDimensionality() {
-        return dimensionality;
-    }
-
-
-    public void setRoleId(String roleId) {
-        this.roleId = roleId;
-    }
-
-    public String getRoleId() {
-        return roleId;
-    }
-
-
-    public void setSex(SexType sex) {
-        this.sex = sex;
-    }
-
-    public SexType getSex() {
-        return sex;
-    }
-
-
-    public void setRealityName(String realityName) {
-        this.realityName = realityName;
-    }
-
-    public String getRealityName() {
-        return realityName;
-    }
-
-
-    public void setUseName(String useName) {
-        this.useName = useName;
-    }
-
-    public String getUseName() {
-        return useName;
-    }
-
-
-    public void setEamil(String eamil) {
-        this.eamil = eamil;
-    }
-
-    public String getEamil() {
-        return eamil;
-    }
-
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
-    }
-
-    public String getLongitude() {
-        return longitude;
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
     }
 }
