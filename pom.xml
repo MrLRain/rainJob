@@ -160,6 +160,11 @@
             <artifactId>dozer</artifactId>
             <version>5.5.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.adc</groupId>
+            <artifactId>adc-da-util</artifactId>
+            <version>1.0.0</version>
+        </dependency>
 
     </dependencies>
 

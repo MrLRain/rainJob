@@ -1,9 +1,13 @@
 package rainJob.com.entity;
 
-public class Resume extends BaseEntity {
+import javax.persistence.Column;
 
+public class Resume extends BaseEntity {
+    @Column(name = "user_id",length = 36)
     public String userId;
+    @Column
     public String address;
+    @Column(name="resume_name")
     public String resumeName;//简历名称
 
     public String getUserId() {

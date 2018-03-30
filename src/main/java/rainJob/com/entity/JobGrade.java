@@ -1,5 +1,7 @@
 package rainJob.com.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Transient;
 import java.util.List;
 
 /**
@@ -10,8 +12,13 @@ import java.util.List;
  */
 public class JobGrade extends BaseEntity {
 
+    @Column(name = "grade_name")
     private String gradeName;
+    @Column(name = "jobGrade_id")
+    private String jobGradeId;
+    @Transient
     private List<JobGrade> jobGrades;
+    @Transient
     private JobGrade parentGrades;
 
     public JobGrade getParentGrades() {
@@ -34,7 +41,16 @@ public class JobGrade extends BaseEntity {
         return jobGrades;
     }
 
+    public String getJobGradeId() {
+        return jobGradeId;
+    }
+
+    public void setJobGradeId(String jobGradeId) {
+        this.jobGradeId = jobGradeId;
+    }
+
     public void setJobGrades(List<JobGrade> jobGrades) {
+
         this.jobGrades = jobGrades;
     }
 }

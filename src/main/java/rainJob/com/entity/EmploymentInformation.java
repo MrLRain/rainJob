@@ -1,6 +1,10 @@
 package rainJob.com.entity;
 
 import rainJob.com.util.enumCodes.YesOrNo;
+
+import javax.persistence.Column;
+import javax.persistence.Transient;
+
 /**
  * @Author: xiaoyu
  * @Date: 17:11 2017/12/29
@@ -8,11 +12,15 @@ import rainJob.com.util.enumCodes.YesOrNo;
  * @ModifyBy:
  */
 public class EmploymentInformation extends BaseEntity{
-
+    @Column(name = "company_name")
     private String companyName;//公司名称
+    @Column(name = "emp_name")
     private String empName;//职位名称
+    @Column(name = "work_address")
     private String workAddress;
+    @Column
     private String salary;//薪水
+    @Transient
     private User user; //招聘者
     private YesOrNo stick;
     private CompanyInformation companyInformation;

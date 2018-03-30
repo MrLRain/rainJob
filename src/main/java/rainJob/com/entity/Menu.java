@@ -1,13 +1,21 @@
 package rainJob.com.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Transient;
 import java.util.List;
 
 public class Menu extends BaseEntity {
-
-    public String menuName;
-    public  Menu parentMenu;
+    @Column(name = "menu_name")
+    private String menuName;
+    @Column(name = "menu_id")
+    private String menuId;
+    @Transient
+    public Menu parentMenu;
+    @Transient
     public List<Menu> sonMenu;
+    @Column
     public String leeway;//保留字段
+    @Column(name = "user_Id")
     public String userId;
 
     public String getUserId() {
@@ -48,5 +56,13 @@ public class Menu extends BaseEntity {
 
     public void setLeeway(String leeway) {
         this.leeway = leeway;
+    }
+
+    public String getMenuId() {
+        return menuId;
+    }
+
+    public void setMenuId(String menuId) {
+        this.menuId = menuId;
     }
 }

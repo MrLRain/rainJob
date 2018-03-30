@@ -1,6 +1,9 @@
 package rainJob.com.entity;
 
 
+import javax.persistence.Column;
+import javax.persistence.Transient;
+
 /**
  * @Author: xiaoyu
  * @Date: 10:20 2018/1/2
@@ -9,10 +12,15 @@ package rainJob.com.entity;
  */
 public class Delivery extends BaseEntity {
 
+    @Column(name = "user_id",length = 36)
+    private String userId;
+    @Transient
     private User user;
-
+    @Column(name = "resume_id",length = 36)
     private String resumeId; //简历选择
-
+    @Column(name="employmentInformation_id")
+    private String employmentInformationId;
+    @Transient
     private EmploymentInformation employmentInformation;
 
     public User getUser() {
@@ -37,5 +45,21 @@ public class Delivery extends BaseEntity {
 
     public void setEmploymentInformation(EmploymentInformation employmentInformation) {
         this.employmentInformation = employmentInformation;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getEmploymentInformationId() {
+        return employmentInformationId;
+    }
+
+    public void setEmploymentInformationId(String employmentInformationId) {
+        this.employmentInformationId = employmentInformationId;
     }
 }

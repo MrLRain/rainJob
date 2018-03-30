@@ -1,6 +1,9 @@
 package rainJob.com.entity;
 
 
+import org.springframework.data.annotation.Transient;
+
+import javax.persistence.Column;
 import java.util.List;
 
 /**
@@ -9,35 +12,55 @@ import java.util.List;
  * @Description:
  * @ModifyBy: 简历回复表
  */
-public class Solutions  extends BaseEntity{
+public class Solutions extends BaseEntity {
+    @Transient
+    private List<Delivery> deliveryList;
+    @Column(length = 36)
+    private String deliveryId;
+    @Column
+    private String message;
+    @Transient
+    private User user;
+    @Column(name = "user_id", length = 36)
+    private String userId;
 
-        private List<Delivery> deliveryList;
+    public List<Delivery> getDeliveryList() {
+        return deliveryList;
+    }
 
-        private String message;
+    public void setDeliveryList(List<Delivery> deliveryList) {
+        this.deliveryList = deliveryList;
+    }
 
-        private User user;
+    public String getMessage() {
+        return message;
+    }
 
-        public List<Delivery> getDeliveryList() {
-                return deliveryList;
-        }
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-        public void setDeliveryList(List<Delivery> deliveryList) {
-                this.deliveryList = deliveryList;
-        }
+    public User getUser() {
+        return user;
+    }
 
-        public String getMessage() {
-                return message;
-        }
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-        public void setMessage(String message) {
-                this.message = message;
-        }
+    public String getDeliveryId() {
+        return deliveryId;
+    }
 
-        public User getUser() {
-                return user;
-        }
+    public void setDeliveryId(String deliveryId) {
+        this.deliveryId = deliveryId;
+    }
 
-        public void setUser(User user) {
-                this.user = user;
-        }
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 }

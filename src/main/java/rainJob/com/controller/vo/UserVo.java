@@ -4,7 +4,6 @@ import rainJob.com.util.enumCodes.SexType;
 
 public class UserVo {
     private String headIcon;
-    private String password;
     private String resumeId;
     private String signature;
     private String dimensionality;
@@ -22,15 +21,6 @@ public class UserVo {
 
     public String getHeadIcon() {
         return headIcon;
-    }
-
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
 

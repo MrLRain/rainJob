@@ -2,12 +2,22 @@ package rainJob.com.entity;
 
 import rainJob.com.util.enumCodes.GradeEnum;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "role")
 public class Role extends BaseEntity {
 
-        public String roleName;
-        public GradeEnum grade;
-        public String role;
-        public String leeway;
+        @Column(length = 36,name = "role_name")
+        private String roleName;
+        @Column(length = 2)
+        private GradeEnum grade;
+        @Column
+        private String role;
+        @Column
+        private String leeway;
 
         public String getRoleName() {
             return roleName;

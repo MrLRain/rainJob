@@ -3,12 +3,21 @@ package rainJob.com.controller;
 
 import rainJob.com.controller.vo.UserVo;
 import rainJob.com.dto.ResponseMessage;
+import rainJob.com.service.UserService;
+import rainJob.com.util.dozer.BeanMapper;
+
+import javax.annotation.Resource;
 
 public class UserController extends BaseController<UserVo> {
 
+    @Resource
+    UserService userService;
+
+
     @Override
     public ResponseMessage<UserVo> idList(String... ids) {
-        return null;
+        ResponseMessage responseMessage = new ResponseMessage();
+        return responseMessage.success(userService.findOne("1"));
     }
 
     @Override

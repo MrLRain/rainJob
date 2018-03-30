@@ -2,6 +2,8 @@ package rainJob.com.entity;
 
 import rainJob.com.util.enumCodes.SexType;
 
+import javax.persistence.Column;
+
 /**
  * @Author: xiaoyu
  * @Date: 10:21 2017/12/29
@@ -10,16 +12,27 @@ import rainJob.com.util.enumCodes.SexType;
  */
 public class User extends BaseEntity {
 
+    @Column(name = "sex",length = 2)
     private SexType sex;
-    private String useName;
+    @Column(name ="username",length = 255,nullable = false)
+    private String userName;
+    @Column(name ="reality_name",length = 255,nullable = false)
     private String realityName;
+    @Column(length = 26)
     private String password;
+    @Column(length = 255)
     private String signature;
+    @Column(name = "head_icon")
     private String headIcon;
+    @Column(name="role_id")
     private String roleId;
+    @Column(name="resume_id")
     private String resumeId;
+    @Column
     private String eamil;
+    @Column
     private String dimensionality;//维度
+    @Column
     private String longitude;//精度
 
     public SexType getSex() {
@@ -30,12 +43,12 @@ public class User extends BaseEntity {
         this.sex = sex;
     }
 
-    public String getUseName() {
-        return useName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUseName(String useName) {
-        this.useName = useName;
+    public void setUserName(String useName) {
+        this.userName = useName;
     }
 
     public String getRealityName() {

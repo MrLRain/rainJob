@@ -1,5 +1,7 @@
 package rainJob.com.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Transient;
 import java.util.List;
 
 import java.math.BigDecimal;
@@ -11,12 +13,19 @@ import java.math.BigDecimal;
  * @ModifyBy:
  */
 public class CompanyInformation extends BaseEntity {
-
+    @Column
     private String jobName;
+    @Column(length = 36,name = "city_id")
+    private String cityId;
+    @Transient
     private City city;
+    @Column(name = "job_grade")
     private JobGrade jobGrade;
+    @Column
     private String introduction;
+    @Column(name = "people_count")
     private BigDecimal peopleCount;
+    @Transient
     private List<EmploymentInformation> employmentInformationList;
 
 
