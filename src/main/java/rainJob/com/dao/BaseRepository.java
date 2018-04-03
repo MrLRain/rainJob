@@ -12,7 +12,6 @@ import java.util.List;
 @Repository
 @Transactional
 public interface BaseRepository extends JpaRepository<User, String> {
-    long countAllByCreateDate(Date CreateDate);
     @Override
     List<User> findAll();
 

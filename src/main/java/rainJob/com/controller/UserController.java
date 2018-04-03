@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import rainJob.com.controller.vo.UserVo;
-<<<<<<< HEAD
 import rainJob.com.dao.BaseRepository;
 import rainJob.com.entity.User;
 import rainJob.com.service.UserService;
@@ -27,27 +26,10 @@ public class UserController extends SpringBeanFactory<User, UserVo,BaseRepositor
     private UserService UserService;
     @Autowired
     private BeanMapper beanMapper;
+
     @Override
     public BeanMapper getBeanMapper() {
         return beanMapper;
-=======
-import rainJob.com.dto.ResponseMessage;
-import rainJob.com.service.UserService;
-import rainJob.com.util.dozer.BeanMapper;
-
-import javax.annotation.Resource;
-
-public class UserController extends BaseController<UserVo> {
-
-    @Resource
-    UserService userService;
-
-
-    @Override
-    public ResponseMessage<UserVo> idList(String... ids) {
-        ResponseMessage responseMessage = new ResponseMessage();
-        return responseMessage.success(userService.findOne("1"));
->>>>>>> 43ed15514465f493ae6e479859a4ee069c75759c
     }
 
     @Override
@@ -64,6 +46,7 @@ public class UserController extends BaseController<UserVo> {
     public Class getTClass() {
         return User.class;
     }
+
 
     @GetMapping("/kill")
     public void showKill(){
