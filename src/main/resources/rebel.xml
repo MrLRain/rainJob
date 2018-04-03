@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 
 <!--
   This is the JRebel configuration file. It maps the running application to your IDE workspace, enabling JRebel reloading for this project.
@@ -8,6 +9,12 @@
 
 	<classpath>
 		<dir name="D:/MyProject/rainJob/target/classes">
+=======
+<application generated-by="intellij" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://update.zeroturnaround.com/jrebel/rebel-2_1.xsd">
+
+	<classpath>
+		<dir name="C:/poject/rainJob/target/classes">
+>>>>>>> 43ed15514465f493ae6e479859a4ee069c75759c
 		</dir>
 	</classpath>
 

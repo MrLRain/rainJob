@@ -237,6 +237,15 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>${log4jVersion}</version>
         </dependency>
+<<<<<<< HEAD
+=======
+        <dependency>
+            <groupId>com.adc</groupId>
+            <artifactId>adc-da-util</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+>>>>>>> 43ed15514465f493ae6e479859a4ee069c75759c
     </dependencies>
 
     <properties>

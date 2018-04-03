@@ -1,6 +1,7 @@
 package rainJob.com.controller.vo;
 
 
+<<<<<<< HEAD
 import java.util.Date;
 /**
  * @Author: xiaoyu
@@ -15,6 +16,32 @@ public class UserVo extends BaseEntityVo {
 
     public String getId() {
         return id;
+=======
+public class UserVo {
+    private String headIcon;
+    private String resumeId;
+    private String signature;
+    private String dimensionality;
+    private String roleId;
+    private SexType sex;
+    private String realityName;
+    private String useName;
+    private String eamil;
+    private String longitude;
+
+
+    public void setHeadIcon(String headIcon) {
+        this.headIcon = headIcon;
+    }
+
+    public String getHeadIcon() {
+        return headIcon;
+    }
+
+
+    public void setResumeId(String resumeId) {
+        this.resumeId = resumeId;
+>>>>>>> 43ed15514465f493ae6e479859a4ee069c75759c
     }
 
     public void setId(String id) {

@@ -73,7 +73,6 @@ public class ResponseMessage<T> {
         return tResponseMessage;
     }
 
-
     public ResponseMessage<T> error(Object... data) {
         ResponseMessage<T> tResponseMessage = new ResponseMessage<>();
         if (data.length == 0) {

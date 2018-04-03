@@ -2,6 +2,7 @@ package rainJob.com.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
+<<<<<<< HEAD
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -18,6 +19,24 @@ public class BaseEntity implements Serializable {
     private Date createDate;
     @Column(name = "update_date")
     @Temporal(TemporalType.TIMESTAMP)
+=======
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import java.util.Date;
+
+@MappedSuperclass
+public class BaseEntity {
+    @Column(length = 36,nullable = false)
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String id;
+    @Column
+    private Date createDate;
+    @Column
+>>>>>>> 43ed15514465f493ae6e479859a4ee069c75759c
     private Date updateDate;
 
     public String getId() {

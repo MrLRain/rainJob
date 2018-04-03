@@ -6,5 +6,12 @@
         <mapping>
             <class-a>rainJob.com.entity.User</class-a>
             <class-b>rainJob.com.controller.vo.UserVo</class-b>
+<<<<<<< HEAD
+=======
+            <field>
+                <a></a>
+                <b></b>
+            </field>
+>>>>>>> 43ed15514465f493ae6e479859a4ee069c75759c
         </mapping>
 </mappings>
