@@ -17,7 +17,7 @@ public class ExerciseJedis {
         System.out.println("name = " + name);
         //自增自减运算
         Long num = jedis.incr("num");
-        Long incrByAge = jedis.incrBy("age", 12);
+        Long incrByAge = jedis.incrBy("age", 12); //redis 命令 incrBy
         System.out.println("num = " + num);
         System.out.println("incrByAge == "+incrByAge+"jedis.get(\"age\")" + jedis.get("age"));
 
