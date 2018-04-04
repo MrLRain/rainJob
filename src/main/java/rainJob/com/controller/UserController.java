@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import rainJob.com.controller.vo.UserVo;
 import rainJob.com.dao.BaseRepository;
+import rainJob.com.dao.UserDao;
 import rainJob.com.entity.User;
 import rainJob.com.service.UserService;
 import rainJob.com.util.SpringBeanFactory;
@@ -20,7 +21,7 @@ import rainJob.com.util.supper.BaseService;
  */
 @RestController
 @RequestMapping("/user")
-public class UserController extends SpringBeanFactory<User, UserVo,BaseRepository> {
+public class UserController extends SpringBeanFactory<User, UserVo,UserDao> {
 
     @Autowired
     private UserService UserService;
@@ -33,7 +34,7 @@ public class UserController extends SpringBeanFactory<User, UserVo,BaseRepositor
     }
 
     @Override
-    public BaseService<User,BaseRepository> getService() {
+    public BaseService<User,UserDao> getService() {
         return UserService;
     }
 

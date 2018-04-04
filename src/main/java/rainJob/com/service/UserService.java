@@ -2,6 +2,7 @@ package rainJob.com.service;
 
 import org.springframework.stereotype.Service;
 import rainJob.com.dao.BaseRepository;
+import rainJob.com.dao.UserDao;
 import rainJob.com.entity.User;
 import rainJob.com.util.supper.BaseService;
 
@@ -14,11 +15,12 @@ import javax.annotation.Resource;
  * @ModifyBy:
  */
 @Service
-public class UserService extends BaseService<User,BaseRepository> {
+public class UserService extends BaseService<User,UserDao> {
     @Resource
-    private BaseRepository baseRepository;
+    private UserDao userDao;
+
     @Override
-    public BaseRepository getDao() {
-        return baseRepository;
+    public UserDao getDao() {
+        return userDao;
     }
 }

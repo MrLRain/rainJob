@@ -13,14 +13,14 @@ public class ExerciseJDBC {
 
     public static Connection conn = null;
     public static PreparedStatement pst = null;
-
-    public static void main(String[] args) {
-        try {
-            Class.forName(name);//指定连接类型
-            conn = DriverManager.getConnection(url, user, password);//获取连接
-            System.out.println("conn = " + conn.getMetaData());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//
+//    public static void main(String[] args) {
+//        try {
+//            Class.forName(name);//指定连接类型
+//            conn = DriverManager.getConnection(url, user, password);//获取连接
+//            System.out.println("conn = " + conn.getMetaData());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 }

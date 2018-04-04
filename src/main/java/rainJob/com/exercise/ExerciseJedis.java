@@ -14,6 +14,7 @@ public class ExerciseJedis {
     @Test
     public void testJedis(){
         Jedis jedis = new Jedis("47.93.15.203",6379);
+        jedis.auth("Rain0527");
         //----PING  redis 命令----
         System.out.println("jedis.ping() = " + jedis.ping());
         //单个值  set --设置成功  返回ok 想象set集合 或者 字符串
