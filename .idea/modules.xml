@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/rainJob.iml" filepath="$PROJECT_DIR$/rainJob.iml" />
-      <module fileurl="file://$PROJECT_DIR$/rainJob.com.iml" filepath="$PROJECT_DIR$/rainJob.com.iml" />
     </modules>
   </component>
 </project>
