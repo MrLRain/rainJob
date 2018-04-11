@@ -30,7 +30,6 @@ public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherS
 
     }
 
-
     @Override
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();

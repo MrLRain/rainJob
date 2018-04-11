@@ -3,6 +3,7 @@ package rainJob.com.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import rainJob.com.controller.vo.UserVo;
@@ -52,5 +53,11 @@ public class UserController extends SpringBeanFactory<User, UserVo,UserDao> {
     @GetMapping("/kill")
     public void showKill(){
         System.out.println("kill = " + "kill");
+    }
+
+    @GetMapping("/home")
+    @ModelAttribute
+    public String home(){
+        return "home";
     }
 }

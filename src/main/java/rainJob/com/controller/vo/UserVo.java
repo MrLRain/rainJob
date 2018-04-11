@@ -37,4 +37,6 @@ public class UserVo extends BaseEntityVo {
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
     }
+
+
 }
