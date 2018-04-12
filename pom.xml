@@ -19,6 +19,7 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <encoding>utf-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -236,11 +237,6 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>${log4jVersion}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.adc</groupId>
-            <artifactId>adc-da-util</artifactId>
-            <version>1.0.0</version>
         </dependency>
 
         <!-- jedis -->

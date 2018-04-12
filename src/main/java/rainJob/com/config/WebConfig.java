@@ -1,8 +1,6 @@
 package rainJob.com.config;
 
-import org.apache.catalina.servlet4preview.ServletContext;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +22,6 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.spring4.SpringTemplateEngine;
-import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
@@ -34,7 +31,7 @@ import java.util.Properties;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = {"rainJob.com.dao"}, entityManagerFactoryRef = "entityManagerFactory")
+@EnableJpaRepositories(basePackages = {"rainJob.com.dao"})
 @ComponentScan(basePackages = {"rainJob.com.controller", "rainJob.com.service"})
 /**
  * @Author: xiaoyu
@@ -46,12 +43,10 @@ import java.util.Properties;
     public static final String name = "com.mysql.jdbc.Driver";
     public static final String user = "root";
     public static final String password = "liuyuRain9-i";
-    private static final String RESOURCES_LOCATION = "/resources/";
-    private static final String RESOURCES_HANDLER = RESOURCES_LOCATION + "**";
 
 
-    //配置servlet处理
-    @Override
+//    配置servlet处理
+   @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         // 配置静态资源处理
         configurer.enable();//对静态资源的请求转发到容器缺省的servlet，而不使用DispatcherServlet
@@ -65,18 +60,18 @@ import java.util.Properties;
         requestMappingHandlerMapping.setUseTrailingSlashMatch(false);
         return requestMappingHandlerMapping;
     }
-
-    @Override
-    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler(RESOURCES_HANDLER).addResourceLocations(RESOURCES_LOCATION);
-
-    }
+/*    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        System.out.println("registry = " + registry);
+        registry.addResourceHandler("/statics/**").addResourceLocations("/statics/");
+        super.addResourceHandlers(registry);
+    }*/
 
     //    配置jsp视图解析器
     @Bean
     public ViewResolver viewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/view/");
+        resolver.setPrefix("/WEB-INF/");
         resolver.setSuffix(".jsp");
         resolver.setOrder(2);
         resolver.setCache(false);
@@ -84,27 +79,36 @@ import java.util.Properties;
     }
 
     @Bean      //Thymeleaf视图解析器
-    public ViewResolver viewResolver(TemplateEngine templateEngine){
+    public ViewResolver thymeleafViewResolver(TemplateEngine templateEngine) {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine);
+        viewResolver.setCharacterEncoding("utf-8");
+        viewResolver.setCache(false);
+        viewResolver.setOrder(1);
+        viewResolver.setCacheUnresolved(false);
         return viewResolver;
     }
+
+
     @Bean    //模板引擎
-    public TemplateEngine templateEngine(ServletContextTemplateResolver templateResolver){
+    public TemplateEngine templateEngine(ServletContextTemplateResolver templateResolver) {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver);
+        templateEngine.clearTemplateCache();
         return templateEngine;
     }
+
     @Bean
-    public ServletContextTemplateResolver templateResolver(){          //模板解析器
+    public ServletContextTemplateResolver templateResolver() {          //模板解析器
         ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver(this.getServletContext());
-        templateResolver.setPrefix("/view/");
+        templateResolver.setPrefix("/WEB-INF/");
         templateResolver.setSuffix(".html");
-        templateResolver.setTemplateMode("HTML");
         templateResolver.setOrder(1);
         templateResolver.setCacheable(false);
+        templateResolver.setTemplateMode(TemplateMode.HTML);
         return templateResolver;
     }
+
     //数据源
     @Bean
     public DriverManagerDataSource dataSource() {
