@@ -31,13 +31,13 @@ public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherS
     @Override
     protected Class[] getServletConfigClasses() {
         return new Class[]{WebConfig.class};
-
     }
 
     @Override
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding("UTF-8");
+        characterEncodingFilter.setForceEncoding(true);
         return new Filter[]{new HiddenHttpMethodFilter(), characterEncodingFilter};
     }
 }
