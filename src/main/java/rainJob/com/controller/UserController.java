@@ -14,12 +14,9 @@ import rainJob.com.service.UserService;
 import rainJob.com.util.SpringBeanFactory;
 import rainJob.com.util.dozer.BeanMapper;
 import rainJob.com.util.supper.BaseService;
-/**
- * @Author: xiaoyu
- * @Date: 11:36 2018/3/30
- * @Description:
- * @ModifyBy:
- */
+
+import java.util.*;
+
 @RestController
 @RequestMapping("/user")
 public class UserController extends SpringBeanFactory<User, UserVo,UserDao> {
@@ -29,8 +26,20 @@ public class UserController extends SpringBeanFactory<User, UserVo,UserDao> {
     @Autowired
     private BeanMapper beanMapper;
 
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        Iterator<String> iterator = set.iterator();
+        while (iterator.hasNext()) {
+            String next =  iterator.next();
+
+        }
+    }
     @Override
     public BeanMapper getBeanMapper() {
+
+        System.out.println();
+        int i = 0;
+        System.out.println("i = " + i);
         return beanMapper;
     }
 
@@ -48,7 +57,6 @@ public class UserController extends SpringBeanFactory<User, UserVo,UserDao> {
     public Class getTClass() {
         return User.class;
     }
-
 
     @GetMapping("/kill")
     public void showKill(){

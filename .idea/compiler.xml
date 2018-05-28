@@ -7,12 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="rainJob" />
-        <module name="rainJob.com" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="rainJob" target="1.8" />
-      <module name="rainJob.com" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>

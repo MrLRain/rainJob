@@ -5,14 +5,17 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+
 @MappedSuperclass
 public class BaseEntity implements Serializable {
     private static final long serialVersionUID = -2737738263480523755L;
     @Id
-    @Column(name="ID", length = 36, nullable = false)
+    @Column(name = "ID", length = 36, nullable = false)
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+
+
     @Column(name = "create_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createDate;

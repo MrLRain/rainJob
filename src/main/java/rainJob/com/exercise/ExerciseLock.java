@@ -39,4 +39,5 @@ public class ExerciseLock {
             System.out.println(thread.getName()+"获取锁失败");
         }
     }
+
 }
