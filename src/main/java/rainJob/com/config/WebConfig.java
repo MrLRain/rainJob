@@ -50,7 +50,6 @@ import org.thymeleaf.templatemode.TemplateMode;
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("home");
     }
-<<<<<<< Updated upstream
 
     /**
      * 静态资源访问控制：假如defaultServlet 没有过滤到接收的静态资源是会报404的
@@ -60,18 +59,9 @@ import org.thymeleaf.templatemode.TemplateMode;
      * @param registry
      */
     @Override
-=======
-   @Override
->>>>>>> Stashed changes
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/statics/**").addResourceLocations("/statics/");
-<<<<<<< Updated upstream
     }
-
-=======
-        super.addResourceHandlers(registry);
-    }
->>>>>>> Stashed changes
     //    配置jsp视图解析器
     @Bean
     public ViewResolver viewResolver() {
