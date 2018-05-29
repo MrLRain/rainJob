@@ -42,9 +42,9 @@ public class ExerciseJDBC {
 
     @Test
     public void testOracle() throws SQLException {
-        final String url = "jdbc:oracle:thin:@//118.190.136.80:1521/orcl";
+        final String url = "jdbc:oracle:thin:@//xxxxx:1521/orcl";
         final String name = "oracle.jdbc.driver.OracleDriver";
-        final String user = "faw_vk";
+        final String user = "xxxxx";
         final String password = "123456";
         Connection conn = null;
         try {
@@ -72,7 +72,7 @@ public class ExerciseJDBC {
 
     @Test
     public void testMongo() {
-        final String url = "mongodb://dppf:dppf@47.97.19.73:27017/dppf";
+        final String url = "mongodb://dppf:dppf@xxxxxx/dppf";
         MongoClientURI mongoClientURI = new MongoClientURI(url);
         String username = mongoClientURI.getUsername();
         char[] password = mongoClientURI.getPassword();
